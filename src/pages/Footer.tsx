@@ -16,6 +16,8 @@ export default function LabelBottomNavigation() {
   const navigate = useNavigate();
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    console.log(event);
+    
     setValue(newValue);
     switch (newValue) {
       case "settings":
