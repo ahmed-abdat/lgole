@@ -21,6 +21,13 @@ function Home() {
 
     });
 
+    // check if the screen is mobile
+    if (window.innerWidth <= 768) {
+      setShowDrawer(true);
+    } else {
+      setShowDrawer(false);
+    }
+
     return () => { 
       // remove the event listener
       window.removeEventListener("resize", () => {});
