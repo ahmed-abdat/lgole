@@ -10,6 +10,10 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { useRef } from "react";
+import DropDownMenu from "./DropDownMenu";
+// import {ComboboxPopover} from "../layout/CompoBox";
+import { Dialog } from "@mui/material";
+import { DrawerDemo } from "./DrawerCustom";
 
 export default function CustomeDrawer() {
     
@@ -25,22 +29,20 @@ const closeDrawer = () => {
   return (
     <div>
       <Drawer>
-        <DrawerTrigger>chose your bank</DrawerTrigger>
+        <DrawerTrigger>
+          <Button variant="secondary">show the drawer</Button>
+           </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
-            <DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
-            <DrawerDescription>This action cannot be undone.</DrawerDescription>
+            <DrawerTitle>Drawer Title</DrawerTitle>
+            <DrawerDescription>Drawer Description</DrawerDescription>
           </DrawerHeader>
-          <DrawerFooter>
-            <Button
-              onClick={closeDrawer}
-            >
-              Submit
-            </Button>
-            <DrawerClose ref={closeDraweRef}>
-              <Button variant="outline">Cancel</Button>
-            </DrawerClose>
-          </DrawerFooter>
+        <DrawerFooter>
+      <Button onClick={closeDrawer}>Submit</Button>
+      <DrawerClose>
+        <Button variant="outline" ref={closeDraweRef}>Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </div>
