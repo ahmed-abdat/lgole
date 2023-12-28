@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import "./App.css";
 import NoteFound from "./pages/noteFound";
+import { Suspense } from "react";
 
 
 function App() {
@@ -15,10 +16,12 @@ function App() {
   return (
     <Router>
       <ThemeProvider>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<NoteFound />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NoteFound />} />
+        </Routes>
+        </Suspense>
       </ThemeProvider>
     </Router>
   );
