@@ -11,12 +11,32 @@ import {
   QuestionMarkCircledIcon,
 } from "@radix-ui/react-icons";
 import { Bell } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function LabelBottomNavigation() {
-  const [value, setValue] = React.useState("home");
+  const [value, setValue] = React.useState("/");
+
+  const navigate = useNavigate();
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
+    switch (newValue) {
+      case "settings":
+        navigate("/settings");
+        break;
+      case "Info":
+        navigate("/info");
+        break;
+      case "bell":
+        navigate("/bell");
+        break;
+      case "/":
+        navigate("/");
+        break;
+      default:
+        navigate("/");
+        break;
+    }
   };
 
   const stylesBtn = {
@@ -25,7 +45,8 @@ export default function LabelBottomNavigation() {
   };
 
   return (
-      <BottomNavigation  sx={{ width : '100%' , minHeight : '9dvh' , background : 'inherit' }} value={value} onChange={handleChange}>
+      <section  className="fixed bottom-0 left-0 w-screen bg-slate-50">
+        <BottomNavigation  sx={{ width : '100%' , minHeight : '9dvh' , background : 'inherit' }} value={value} onChange={handleChange}>
       <BottomNavigationAction
         label="Settings"
         value="settings"
@@ -43,9 +64,10 @@ export default function LabelBottomNavigation() {
       />
       <BottomNavigationAction
         label="Home"
-        value="home"
+        value="/"
         icon={<HomeIcon style={stylesBtn} />}
       />
     </BottomNavigation>
+      </section>
   );
 }

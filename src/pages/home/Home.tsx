@@ -33,9 +33,7 @@ function Home() {
             <ModeToggle />
         </header>
       {/* footer */}
-      <section className="fixed bottom-0 left-0 w-screen bg-slate-50">
         <Footer />
-      </section>
     </main>
   );
 }
