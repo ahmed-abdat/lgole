@@ -18,13 +18,14 @@ function Home() {
       } else {
         setShowDrawer(false);
       }
+
     });
 
     return () => { 
       // remove the event listener
       window.removeEventListener("resize", () => {});
     }
-  }, []);
+  }, [window.innerWidth]);
   return (
     <main className="py-2 px-3">
       {/* header */}
