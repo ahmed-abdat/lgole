@@ -3,6 +3,8 @@ import { ModeToggle } from "../../components/mode-toggle";
 import Footer from "../Footer";
 import CustomeDrawer from "../../layout/Drawer";
 import CustomeDialoge from "../../layout/Dialoge";
+import {InputForm} from "../../layout/Form";
+import Bankily from '/img/bankily.png';
 
 function Home() {
 
@@ -40,6 +42,7 @@ function Home() {
             { showDrawer ? <CustomeDrawer /> : <CustomeDialoge />}
             <ModeToggle />
         </header>
+        <img src={Bankily} alt="react logo" className="w-1/2 mx-auto" />
       {/* footer */}
         <Footer />
     </main>

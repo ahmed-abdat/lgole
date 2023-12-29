@@ -9,6 +9,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { InputForm } from '../layout/Form';
 import { useRef } from "react";
 // import {ComboboxPopover} from "../layout/CompoBox";
 
@@ -32,7 +33,10 @@ const closeDrawer = () => {
         <DrawerContent>
           <DrawerHeader>
             <DrawerTitle>Drawer Title</DrawerTitle>
-            <DrawerDescription>Drawer Description</DrawerDescription>
+            <DrawerDescription>Drawer </DrawerDescription>
+          <section className="flex justify-between items-center p-2 text-right w-full">
+          <InputForm />
+          </section>
           </DrawerHeader>
         <DrawerFooter>
       <Button onClick={closeDrawer}>Submit</Button>
