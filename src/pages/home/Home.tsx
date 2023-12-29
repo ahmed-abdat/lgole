@@ -1,50 +1,40 @@
 import { useEffect, useState } from "react";
 import { ModeToggle } from "../../components/mode-toggle";
-import Footer from "../Footer";
-import CustomeDrawer from "../../layout/Drawer";
-import CustomeDialoge from "../../layout/Dialoge";
-// import {InputForm} from "../../layout/Form";
-import Bankily from '/img/bankily.png';
-
+import Logo from "/img/logo.png";
+import Hero from "/img/hero.png";
+import "./home.css";
+import { Button } from "@/components/ui/button";
+import {DrawerDemo} from '../../layout/DrawerCustom';
 function Home() {
-
-      // show the drawer if the screen is mobile and the dialog if it's desktop
+  // show the drawer if the screen is mobile and the dialog if it's desktop
   const [showDrawer, setShowDrawer] = useState(false);
 
-  useEffect(() => {
-    // add the event listener
-    window.addEventListener("resize", () => {
-      // check if the screen is mobile
-      if (window.innerWidth <= 768) {
-        setShowDrawer(true);
-      } else {
-        setShowDrawer(false);
-      }
-
-    });
-
-    // check if the screen is mobile
-    if (window.innerWidth <= 768) {
-      setShowDrawer(true);
-    } else {
-      setShowDrawer(false);
-    }
-
-    return () => { 
-      // remove the event listener
-      window.removeEventListener("resize", () => {});
-    }
-  }, [window.innerWidth]);
+  const showDrawerHandler = () => {
+    console.log('show drawer');
+    
+    setShowDrawer(true);
+  }
   return (
-    <main className="py-2 px-3">
+    <main className="py-2 px-3 md:px-2">
       {/* header */}
-        <header className="flex justify-between items-center p-3">
-            { showDrawer ? <CustomeDrawer /> : <CustomeDialoge />}
-            <ModeToggle />
-        </header>
-        <img src={Bankily} alt="react logo" className="w-1/2 mx-auto" />
-      {/* footer */}
-        <Footer />
+      <header className="flex justify-between items-center">
+        <img src={Logo} alt="logo" className="w-14" />
+        <ModeToggle />
+      </header>
+      {/* hero */}
+      <section className="flex flex-col justify-center items-center  md:flex-row hero">
+        <img src={Hero} alt="hero" className="sm:w-full lg:w-1/2 md:w1/2" />
+        <div className="flex flex-col lx:flex-row md:w-1/3 w-full">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl text-center font-bold my-4">
+            مع خدمة <span className="text-green-600 font-bold ">الغول</span> حول
+            فظتك بكل سهولة و امان
+          </h1>
+
+          {/* <Button className="w-full md:w-auto" onClick={showDrawerHandler}>Get Started</Button> */}
+          <DrawerDemo />
+       
+        </div>
+      </section>
     </main>
   );
 }
