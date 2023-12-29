@@ -3,7 +3,7 @@ import { ModeToggle } from "../../components/mode-toggle";
 import Footer from "../Footer";
 import CustomeDrawer from "../../layout/Drawer";
 import CustomeDialoge from "../../layout/Dialoge";
-import {InputForm} from "../../layout/Form";
+// import {InputForm} from "../../layout/Form";
 import Bankily from '/img/bankily.png';
 
 function Home() {
