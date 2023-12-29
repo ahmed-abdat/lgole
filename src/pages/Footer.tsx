@@ -16,22 +16,26 @@ export default function LabelBottomNavigation() {
   const navigate = useNavigate();
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    console.log("clickded", event.currentTarget, newValue);
+    // console.log("clickded", event.currentTarget, newValue);
     
     setValue(newValue);
-    Navigation(newValue);
+    setTimeout(() => {
+      Navigation(newValue);
+    } , 1000);
 
   };
 
   const Navigation = (path : String) => {
+    console.log("path", path);
+    
     if (path == "/") {
       navigate('/');
     } else if (path == "settings") {
-      navigate('/${path}');
+      navigate('/settings');
     } else if (path == "Info") {
-      navigate('/${path}');
+      navigate('/Info');
     } else if (path == "bell") {
-      navigate('/${path}');
+      navigate('/bell');
     }
   }
 
@@ -50,22 +54,22 @@ export default function LabelBottomNavigation() {
       >
         <BottomNavigationAction
           label="Settings"
-          value={value}
+          value="settings"
           icon={<GearIcon style={stylesBtn} />}
         />
         <BottomNavigationAction
           label="Info"
-          value={value}
+          value="Info"
           icon={<QuestionMarkCircledIcon style={stylesBtn} />}
         />
         <BottomNavigationAction
           label="Bell"
-          value={value}
+          value="bell"
           icon={<Bell style={stylesBtn} />}
         />
         <BottomNavigationAction
           label="Home"
-          value={value}
+          value="/"
           icon={<HomeIcon style={stylesBtn} />}
         />
       </BottomNavigation>
