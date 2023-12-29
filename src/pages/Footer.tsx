@@ -16,7 +16,7 @@ export default function LabelBottomNavigation() {
   const navigate = useNavigate();
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    // console.log("clickded", event.currentTarget, newValue);
+    console.log("clickded", event.currentTarget, newValue);
     
     setValue(newValue);
     setTimeout(() => {
