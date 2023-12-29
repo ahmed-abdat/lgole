@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-// import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
@@ -53,7 +53,7 @@ export function InputForm() {
             </FormItem>
           )}
         />
-        {/* <Button type="submit" className="w-full">Submit</Button> */}
+        <Button type="submit" className="w-full">Submit</Button>
       </form>
     </Form>
   )
