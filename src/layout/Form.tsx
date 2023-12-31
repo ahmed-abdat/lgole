@@ -123,7 +123,8 @@ export function InputForm() {
   // set the amount after taxes to the form
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data, senderPlatform);
+    const allData = { ...data, senderPlatform, receiverPlatform , taxes };
+    console.log(allData);
     // localStorage.setItem("formData", JSON.stringify({...data , senderPlatform}));
     toast(
       `receiver platform is ${receiverPlatform} and receiver phone is ${data.receiverPhone}`
@@ -164,6 +165,7 @@ export function InputForm() {
               <FormControl onChange={calculateTaxes}>
                 <Input
                 type="number"
+                className="h-10"
                   placeholder="أدخل المبلغ المراد إرساله"
                   {...field}
                   maxLength={5}
@@ -185,7 +187,7 @@ export function InputForm() {
             <FormItem className="rtl">
               <FormLabel className="text-lg">المبلغ بعد الرسوم</FormLabel>
               <FormControl onChange={calculateTaxes}>
-                <Input {...field} disabled  className="bg-gray-200 text-base"/>
+                <Input {...field} disabled  className="bg-gray-200 text-base h-10"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -199,7 +201,7 @@ export function InputForm() {
               <FormLabel className="text-lg">رقم هاتف المتلقي</FormLabel>
               <section className="flex flex-row gap-1">
                 <FormControl>
-                  <Input placeholder="أدخل رقم هاتف المتلقي" {...field} type= 'number' />
+                  <Input placeholder="أدخل رقم هاتف المتلقي" {...field} type= 'number' className="h-10"/>
                 </FormControl>
                 <Selecte setSelected={setReciverPlatform} state="masrivy" />
               </section>
@@ -207,7 +209,7 @@ export function InputForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full min-h-11 text-xl bg-purple-600">
+        <Button  type="submit" className="w-full min-h-11 text-xl bg-purple-600 hover:bg-purple-700">
           التالي
         </Button>
       </form>
