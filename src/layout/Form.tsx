@@ -1,6 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
+import { toast } from "sonner"
+import { Toaster } from "@/components/ui/sonner"
+
 
 import { Button } from "@/components/ui/button"
 import {
@@ -16,7 +19,7 @@ import Selecte from "./Select"
 import { useState } from "react"
 
 const FormSchema = z.object({
-  username: z.string().refine((value) => /^\d{8}$/.test(value), {
+  phone: z.string().refine((value) => /^\d{8}$/.test(value), {
     message: "رقم الهاتف يجب أن يكون 8 أرقام",
   }),
   amount: z.string().refine((value) => +value >= 100 && +value <= 10000, {
@@ -28,7 +31,7 @@ export function InputForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      username: "",
+      phone: "",
       amount: '',
     },
   })
@@ -36,16 +39,19 @@ export function InputForm() {
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     console.log(data, selected);
-    localStorage.setItem("formData", JSON.stringify({...data , selected}));
+    // localStorage.setItem("formData", JSON.stringify({...data , selected}));
+    toast(`app ${selected} amount ${data.amount} phone ${data.phone}`)
+
   }
 
-
+  
   return (
     <Form {...form}>
+      <Toaster />
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
         <FormField
           control={form.control}
-          name="username"
+          name="phone"
           render={({ field }) => (
             <FormItem className="rtl">
               <FormLabel>
