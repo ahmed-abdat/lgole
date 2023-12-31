@@ -185,7 +185,7 @@ export function InputForm() {
             <FormItem className="rtl">
               <FormLabel className="text-lg">المبلغ بعد الرسوم</FormLabel>
               <FormControl onChange={calculateTaxes}>
-                <Input {...field} disabled />
+                <Input {...field} disabled  className="bg-gray-200 text-base"/>
               </FormControl>
               <FormMessage />
             </FormItem>
