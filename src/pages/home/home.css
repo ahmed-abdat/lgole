@@ -10,6 +10,11 @@ form {
     border-radius: 6px;
     font-size: 1.4rem;
     max-width: 500px;
+   
+}
+
+.form {
+    height: calc(100dvh - 80px - 1.5rem);
 }
 
 

@@ -5,7 +5,7 @@ function Transfer() {
   return (
     <>
         <Header />
-        <section className="px-1 w-full flex justify-center items-center">
+        <section className="px-1 w-full flex justify-center items-center form">
         <InputForm />
         </section>
     </>
