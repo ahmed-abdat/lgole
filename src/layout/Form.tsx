@@ -19,7 +19,7 @@ const FormSchema = z.object({
   username: z.string().refine((value) => /^\d{8}$/.test(value), {
     message: "رقم الهاتف يجب أن يكون 8 أرقام",
   }),
-  amount: z.string().refine((value) => +value > 100 && +value < 10000, {
+  amount: z.string().refine((value) => +value >= 100 && +value <= 10000, {
     message: "المبلغ يجب أن يكون بين 100 و 10000",
   }),
 })
