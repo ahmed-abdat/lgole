@@ -145,6 +145,7 @@ export function InputForm() {
                   <Input
                     className="h-10"
                     placeholder="أدخل رقم هاتف المرسل"
+                    type = "number"
                     {...field}
                   />
                 </FormControl>
@@ -162,6 +163,7 @@ export function InputForm() {
               <FormLabel className="text-lg">المبلغ</FormLabel>
               <FormControl onChange={calculateTaxes}>
                 <Input
+                type="number"
                   placeholder="أدخل المبلغ المراد إرساله"
                   {...field}
                   maxLength={5}
@@ -197,7 +199,7 @@ export function InputForm() {
               <FormLabel className="text-lg">رقم هاتف المتلقي</FormLabel>
               <section className="flex flex-row gap-1">
                 <FormControl>
-                  <Input placeholder="أدخل رقم هاتف المتلقي" {...field} />
+                  <Input placeholder="أدخل رقم هاتف المتلقي" {...field} type= 'number' />
                 </FormControl>
                 <Selecte setSelected={setReciverPlatform} state="masrivy" />
               </section>
