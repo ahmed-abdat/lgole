@@ -13,9 +13,9 @@ import { Button } from "@/components/ui/button";
 function Drawere() {
   return (
     <Drawer >
-      <DrawerTrigger>
-        <Button className="w-full text-center relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-t from-[#8122b0] to-[#dc98fd] active:scale-95">
-          <span className="w-full text-2xl h-full flex items-center justify-center  px-10 py-6 bg-[#B931FC] text-[#f1d5fe] rounded-[14px] bg-gradient-to-t from-[#a62ce2] to-[#c045fc]">
+      <DrawerTrigger className="w-2/3 ">
+        <Button className="w-full min-h-10 text-center rounded-md cursor-pointer bg-gradient-to-t from-[#a62ce2] to-[#c045fc] active:scale-95">
+          <span className="text-2xl">
             حول فظتك
           </span>
         </Button>
