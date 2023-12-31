@@ -5,7 +5,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Img from "./Img";
+import SelecteElemnt from "./SelecteElement";
 
 import bankily from '/img/bankily.png'
 import masrivy_logo from '/img/masrivy_logo.webp'
@@ -21,24 +21,24 @@ function Selecte({ setSelected }: { setSelected: (value: string) => void }) {
 
   return (
     <Select onValueChange={handleItemClick} defaultValue="bankily">
-      <SelectTrigger className="w-[160px] h-10">
+      <SelectTrigger className="w-[180px] h-10">
         <SelectValue placeholder="Theme" />
       </SelectTrigger>
       <SelectContent>
         <SelectItem value="bankily" >
-          <Img src={bankily} alt="bankily" />
+         <SelecteElemnt src={bankily} alt="بنكيلي" />
         </SelectItem>
         <SelectItem value="masrivy">
-          <Img src={masrivy_logo} alt="masrivy_logo" />
+          <SelecteElemnt src={masrivy_logo} alt="مصرفي" />
         </SelectItem>
         <SelectItem value="sedad">
-            <Img src={sedad_logo} alt="sedad_logo" />
+            <SelecteElemnt src={sedad_logo} alt="السداد" />
         </SelectItem>
         <SelectItem value="bimbank">
-            <Img src={bimbank_logo} alt="bimbank_logo" />
+            <SelecteElemnt src={bimbank_logo} alt="بيم بانك" />
         </SelectItem>
         <SelectItem value="barid_cash">
-            <Img src={barid_cash} alt="barid_cash" />
+            <SelecteElemnt src={barid_cash} alt="بريد كاش" />
         </SelectItem>
 
       </SelectContent>
