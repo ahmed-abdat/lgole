@@ -13,14 +13,14 @@ import sedad_logo from '/img/sedad_logo.png'
 import bimbank_logo from '/img/bimbank_logo.webp'
 import barid_cash from '/img/barid_cash.jpeg'
 
-function Selecte({ setSelected }: { setSelected: (value: string) => void }) {
+function Selecte({ setSelected , state}: { setSelected: (value: string) => void , state: string }) {
   const handleItemClick = (value: string) => {
     setSelected(value);
     console.log(value);
   };
 
   return (
-    <Select onValueChange={handleItemClick} defaultValue="bankily">
+    <Select onValueChange={handleItemClick} defaultValue={state}>
       <SelectTrigger className="w-[180px] h-10">
         <SelectValue placeholder="Theme" />
       </SelectTrigger>

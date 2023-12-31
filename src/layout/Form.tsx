@@ -25,6 +25,9 @@ const FormSchema = z.object({
   amount: z.string().refine((value) => +value >= 100 && +value <= 10000, {
     message: "المبلغ يجب أن يكون بين 100 و 10000",
   }),
+  receiverPhone: z.string().refine((value) => /^\d{8}$/.test(value), {
+    message: "رقم الهاتف يجب أن يكون 8 أرقام",
+  }),
 })
 
 export function InputForm() {
@@ -33,14 +36,18 @@ export function InputForm() {
     defaultValues: {
       phone: "",
       amount: '',
+      receiverPhone: ''
     },
   })
-  const [selected, setSelected] = useState("bankily")
+
+  // ! state 
+  const [senderPlatform, setSenderPlatform] = useState("bankily");
+  const [receiverPlatform, setReciverPlatform] = useState("masrivy");
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data, selected);
-    // localStorage.setItem("formData", JSON.stringify({...data , selected}));
-    toast(`app ${selected} amount ${data.amount} phone ${data.phone}`)
+    console.log(data, senderPlatform);
+    // localStorage.setItem("formData", JSON.stringify({...data , senderPlatform}));
+    toast(`receiver platform is ${receiverPlatform} and receiver phone is ${data.receiverPhone}`)
 
   }
 
@@ -61,7 +68,7 @@ export function InputForm() {
                 <FormControl>
                   <Input className="h-10" placeholder="أدخل رقم هاتف المرسل" {...field} />
                 </FormControl>
-                <Selecte setSelected={setSelected} />
+                <Selecte setSelected={setSenderPlatform} state="bankily"/>
               </section>
               <FormMessage />
             </FormItem>
@@ -78,6 +85,24 @@ export function InputForm() {
               <FormControl>
                 <Input placeholder="أدخل المبلغ المراد إرساله" {...field} />
               </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="receiverPhone"
+          render={({ field }) => (
+            <FormItem className="rtl">
+              <FormLabel className="text-lg">
+                رقم هاتف المتلقي
+              </FormLabel>
+              <section className="flex flex-row gap-1">
+              <FormControl>
+                <Input placeholder="أدخل رقم هاتف المتلقي" {...field} />
+              </FormControl>
+                <Selecte setSelected={setReciverPlatform} state="masrivy"/>
+              </section>
               <FormMessage />
             </FormItem>
           )}
