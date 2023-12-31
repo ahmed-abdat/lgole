@@ -9,12 +9,12 @@ form {
     padding: 1rem 0.5rem;
     border-radius: 6px;
     font-size: 1.4rem;
+    max-width: 500px;
 }
 
 
 .hero {
-    /* height: calc(100dvh - 56px - 1.5rem); */
-    margin-block: 2rem;
+    height: calc(100dvh - 56px - 1.5rem);
 }
 
 .header {

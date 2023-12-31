@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import hero from "/img/heros.png";
-import Drawere from "./Drawer";
+// import Drawere from "./Drawer";
+import { Button } from "@mui/material";
 
 function Hero() {
+  // navigate to the transfer page
+  const navigate = useNavigate();
+  const handleTransfer = () => {
+    navigate("/transfer");
+  };
   return (
     <section className="flex flex-col gap-2 md:justify-around justify-center items-center  md:flex-row hero px-3">
       <img
@@ -14,7 +21,11 @@ function Hero() {
           مع خدمة <span className="text-green-600 font-bold ">الغول</span> حول
           فظتك بكل سهولة و أمان
         </h1>
-        <Drawere />
+        <Button className="min-h-10 px-3 py-4 w-2/3 text-center rounded-md cursor-pointer bg-gradient-to-t from-[#a62ce2] to-[#c045fc] active:scale-95" onClick={handleTransfer}>
+          <span className="text-2xl text-white">
+            حول فظتك
+          </span>
+        </Button>
       </div>
     </section>
   );
