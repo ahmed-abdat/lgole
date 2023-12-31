@@ -35,8 +35,8 @@ export function InputForm() {
   const [selected, setSelected] = useState("bankily")
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data , selected);
-
+    console.log(data, selected);
+    localStorage.setItem("formData", JSON.stringify({...data , selected}));
   }
 
 
