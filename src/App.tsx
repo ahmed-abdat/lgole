@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import "./App.css";
-import NoteFound from "./pages/noteFound";
 import { Suspense } from "react";
 
 
@@ -14,7 +13,6 @@ function App() {
       <Suspense fallback={<h1>Loading ...</h1>}>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="*" element={<NoteFound />} /> */}
         </Routes>
       </Suspense>
     </Router>

@@ -1,5 +1,4 @@
 import hero from "/img/heros.png";
-import { Button } from "@/components/ui/button";
 import Drawere from "./Drawer";
 
 function Hero() {
