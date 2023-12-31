@@ -54,7 +54,7 @@ export function InputForm() {
           name="phone"
           render={({ field }) => (
             <FormItem className="rtl">
-              <FormLabel>
+              <FormLabel className="text-lg">
                 رقم الهاتف
               </FormLabel>
               <section className="flex flex-row gap-1">
@@ -72,7 +72,7 @@ export function InputForm() {
           name="amount"
           render={({ field }) => (
             <FormItem className="rtl">
-              <FormLabel>
+              <FormLabel className="text-lg">
                 المبلغ
               </FormLabel>
               <FormControl>
