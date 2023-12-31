@@ -2,6 +2,9 @@
   /* background-color: #eee; */
   /* height: 90vh; */
   direction: rtl;
-  font-family: "Rubik", sans-serif;
-  font-family: "Changa", sans-serif;
+  font-family: "Amiri", sans-serif;
+}
+
+.rtl {
+  direction: rtl;
 }

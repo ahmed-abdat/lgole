@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -9,43 +8,28 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { InputForm } from '../layout/Form';
-import { useRef } from "react";
-// import {ComboboxPopover} from "../layout/CompoBox";
 
-export default function CustomeDrawer() {
-    
-    const closeDraweRef = useRef<HTMLButtonElement>(null);
+import {InputForm} from '@/layout/Form'
 
-//   close drawer
-const closeDrawer = () => {
-    if (closeDraweRef.current) {
-        closeDraweRef.current?.click();
-    }
-}
+import { Button } from "@/components/ui/button";
 
+function Drawere() {
   return (
-    <div>
-      <Drawer>
-        <DrawerTrigger>
-          <Button variant="secondary">show the drawer</Button>
-           </DrawerTrigger>
-        <DrawerContent>
-          <DrawerHeader>
-            <DrawerTitle>Drawer Title</DrawerTitle>
-            <DrawerDescription>Drawer </DrawerDescription>
-          <section className="flex justify-between items-center p-2 text-right w-full">
-          <InputForm />
-          </section>
-          </DrawerHeader>
-        <DrawerFooter>
-      <Button onClick={closeDrawer}>Submit</Button>
-      <DrawerClose>
-        <Button variant="outline" ref={closeDraweRef}>Cancel</Button>
-      </DrawerClose>
-    </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </div>
+    <Drawer >
+      <DrawerTrigger>
+        <Button className="w-full text-center relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-t from-[#8122b0] to-[#dc98fd] active:scale-95">
+          <span className="w-full text-2xl h-full flex items-center justify-center  px-10 py-6 bg-[#B931FC] text-[#f1d5fe] rounded-[14px] bg-gradient-to-t from-[#a62ce2] to-[#c045fc]">
+            حول فظتك
+          </span>
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent >
+        <DrawerHeader>
+          <DrawerTitle>إختر التطبيق و أدخل رقم الهاتف</DrawerTitle>
+        <InputForm />
+        </DrawerHeader>
+      </DrawerContent>
+    </Drawer>
   );
 }
+export default Drawere;
