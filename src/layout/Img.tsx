@@ -3,7 +3,7 @@ function Img({ src, alt }: { src: string, alt: string }) {
         <img
             src={src}
             alt={alt}
-            className="w-5 h-5"
+            className="w-8 h-8 rounded-full"
         />
     );
 }

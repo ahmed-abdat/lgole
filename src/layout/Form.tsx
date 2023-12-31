@@ -59,7 +59,7 @@ export function InputForm() {
               </FormLabel>
               <section className="flex flex-row gap-1">
                 <FormControl>
-                  <Input placeholder="أدخل رقم هاتف المرسل" {...field} />
+                  <Input className="h-10" placeholder="أدخل رقم هاتف المرسل" {...field} />
                 </FormControl>
                 <Selecte setSelected={setSelected} />
               </section>

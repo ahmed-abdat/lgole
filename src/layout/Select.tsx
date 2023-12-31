@@ -21,11 +21,11 @@ function Selecte({ setSelected }: { setSelected: (value: string) => void }) {
 
   return (
     <Select onValueChange={handleItemClick} defaultValue="bankily">
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[160px] h-10">
         <SelectValue placeholder="Theme" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="bankily">
+        <SelectItem value="bankily" >
           <Img src={bankily} alt="bankily" />
         </SelectItem>
         <SelectItem value="masrivy">
