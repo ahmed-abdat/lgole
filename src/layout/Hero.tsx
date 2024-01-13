@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import hero from "/img/heros.png";
+import hero from "/img/heros.webp";
 // import Drawere from "./Drawer";
 // import { Button } from "@mui/material";
 import { Button } from "@/components/ui/button";
