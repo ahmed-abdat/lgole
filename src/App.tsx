@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import "./App.css";
 import { Suspense } from "react";
-// import Transfer from "./pages/transfer";
+import Transfer from "./pages/transfer";
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Suspense fallback={<h1>Loading ...</h1>}>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/transfer" element={<Transfer />} /> */}
+          <Route path="/transfer" element={<Transfer />} />
         </Routes>
       </Suspense>
     </Router>

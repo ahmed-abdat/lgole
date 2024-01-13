@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import hero from "/img/heros.png";
 // import Drawere from "./Drawer";
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
+import { Button } from "@/components/ui/button";
 
 function Hero() {
   // navigate to the transfer page
@@ -9,6 +10,9 @@ function Hero() {
   const handleTransfer = () => {
     navigate("/transfer");
   };
+
+
+  
   return (
     <section className="flex flex-col gap-2 md:justify-around justify-center items-center  md:flex-row hero px-3">
       <img
