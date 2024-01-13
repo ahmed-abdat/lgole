@@ -14,7 +14,7 @@ function App() {
       <Suspense fallback={<h1>Loading ...</h1>}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/transfer" element={<Transfer />} />
+          {/* <Route path="/transfer" element={<Transfer />} /> */}
         </Routes>
       </Suspense>
     </Router>
